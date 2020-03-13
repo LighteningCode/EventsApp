@@ -1,0 +1,39 @@
+<div class="row" *ngFor="let session of visibleSessions">
+    <div class="col-md-1">
+        <div *ngIf="auth.isAuthenticated()"> 
+            <upvote (vote)=toggleVote(session) [count]="session.voters.length" [voted]="userHasVoted(session)"></upvote>
+        </div>
+    </div>
+
+    <div class="col-md-10 card bg-light text-info mb-4">
+        <collapsible-well [title]="session.name">
+            <div well-title>
+                {{session.name}}
+                <small *ngIf="session.voters.length > 3" class="fa fa-fire text-red" style="color: red;"></small>
+            </div>
+
+            <div well-presenter>
+                <h6 class="mt-2 h-6 text-dark font-weight-light">{{session.presenter}}</h6>
+            </div>
+
+            <div well-body>
+                <span>Duration: {{session.duration | duration}}</span><br />
+                <span>Level: {{session.level}}</span>
+                <p>{{session.abstract}}</p>
+            </div>
+
+
+        </collapsible-well>
+    </div>
+</div>
+
+
+<div *ngIf="emptyVisibleSessions" class="card p-5 mt-5">
+   <div class="row d-flex justify-content-center">
+        <div class="">
+            <div>
+                <h3 class="text-center text-info">No sessions available</h3>
+            </div>
+        </div>
+   </div>
+</div>

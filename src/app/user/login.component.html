@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row ">
+
+    <div class="card mx-auto shadow-lg mt-5">
+      <div class="card-header">
+        <h3 class="card-title">Login</h3>
+      </div>
+      <div class="card-body ">
+
+        <div class="">
+          <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)" style="width: 300px;" class="" autocomplete="off">
+            <div class="form-group">
+              <label for="userName">User Name: </label>
+              <em
+                *ngIf="loginForm.controls.userName?.invalid && (loginForm.controls.userName?.touched || mouseoverLogin)">Required</em>
+              <input (ngModel)="userName" required name="userName" id="userName" type="text" class="form-control"
+                placeholder="User Name..." />
+            </div>
+            <div class="form-group">
+              <label for="password">Password: </label>
+              <em
+                *ngIf="loginForm.controls.password?.invalid && (loginForm.controls.password?.touched || mouseoverLogin)">Required</em>
+              <input id="password" required (ngModel)="password" name="password" type="password" class="form-control"
+                placeholder="Password..." />
+            </div>
+  
+            <span (mouseenter)="mouseoverLogin=true" (mouseleave)="mouseoverLogin=false">
+              <button type="submit" [disabled]="loginForm.invalid"
+                class="form-control btn btn-primary mb-1">Login</button>
+              <button type="button" (click)="cancel()" class="form-control btn btn-light">Cancel</button>
+            </span>
+          </form>
+          <br>
+          <div *ngIf="loginInvalid" class="alert alert-danger">Invalid Login Info</div>
+        </div>
+       
+      </div>
+    </div>
+
+  </div>
+</div>

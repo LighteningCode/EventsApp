@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+.hoverwell:hover {
+  background-color: #374a5f !important;
+  cursor: pointer;
+}
+
+.eventThumb{
+  
+}
+
+.eventThumb:hover{
+  background-color: #53a9ff;
+}
+
+body {
+    background-color: white !important;
+    color: rgba(0, 0, 0, 0.849) !important;
+}
+
+.container {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.pointable {
+  cursor: pointer;
+}
+
+button {
+  color: #555;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.bg-thumb {
+  background-color: #3c5d83 !important;
+}
+
+.toast-success {
+  background-color: #51a351 !important;
+}
+.toast-error {
+  background-color: #bd362f !important;
+}
+.toast-info {
+  background-color: #2f96b4 !important;
+}
+.toast-warning {
+  background-color: #f89406 !important;
+}

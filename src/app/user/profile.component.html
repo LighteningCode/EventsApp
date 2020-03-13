@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="d-flex justify-content-center col-md-12">
+      <div class="card shadow-lg mt-5" style="width: 400px !important;">
+        <div class="card-header">
+          <h3 class="card-title">Edit Your Profile </h3>
+        </div>
+        <div class="card-body">
+          <div class="w-100">
+            <form [formGroup]="profileForm" (ngSubmit)="saveProfile(profileForm.value)" autocomplete="off" novalidate>
+              <div class="form-group" [ngClass]="{'error' :
+                !validateFirstName()}">
+                <label for="firstName">First Name:</label>
+                <em *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.required">Required</em>
+                <em *ngIf="!validateFirstName() && profileForm.controls.firstName.errors.pattern">Must start with a
+                  letter</em>
+                <input formControlName="firstName" id="firstName" type="text" class="form-control"
+                  placeholder="First Name..." />
+              </div>
+              <div class="form-group" [ngClass]="{'error' :
+            !validateLastName()}">
+                <label for="lastName">Last Name:</label>
+                <em *ngIf="!validateLastName()">Required</em>
+                <input formControlName="lastName" id="lastName" type="text" class="form-control"
+                  placeholder="Last Name..." />
+              </div>
+
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button (click)="cancel()" type="button" class="btn btn-light">Cancel</button>
+              <button (click)="logout()" type="button" style="float:right" class="btn btn-danger">Logout</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
