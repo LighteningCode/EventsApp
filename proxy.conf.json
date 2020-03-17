@@ -1,6 +1,6 @@
 {
     "/api": {
-        "target": "http://localhost:8808",
+        "target": "https://lit-ravine-12332.herokuapp.com",
         "secure": false
     }
 }
