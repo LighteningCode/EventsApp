@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
+    "start": "node ngf-server/server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "server": "node node_modules/ngf-server/server.js",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --prod"
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -21,13 +20,21 @@
     "@angular/http": "7.1.2",
     "@angular/platform-browser": "7.1.2",
     "@angular/platform-browser-dynamic": "7.1.2",
+    "@angular/cli": "7.1.2",
     "@angular/router": "7.1.2",
     "core-js": "2.5.4",
     "ngf-server": "^1.0.2",
     "rxjs": "6.3.3",
     "toastr": "^2.1.2",
     "zone.js": "0.8.26",
-    "typescript": "3.1.6"
+    "typescript": "3.1.6",
+    "body-parser": "1.15.0",
+    "cookie-parser": "1.4.1",
+    "express": "4.13.4",
+    "express-session": "1.13.0",
+    "morgan": "1.7.0",
+    "passport": "0.3.2",
+    "passport-local": "1.0.0"
   },
   "devDependencies": {
     "@angular/compiler-cli": "7.1.2",
