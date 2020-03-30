@@ -30,6 +30,7 @@ export class CreateEventComponent {
     ngOnInit() {  }
 
     saveEvent(formvalues) {
+        console.log(formvalues);
         this.eventService.saveEvent(formvalues).subscribe(() => {
             this.isDirty = false;
             this.router.navigate(['/events']);
