@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { EventService } from '../shared/events.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { ISession, IEvent } from '../shared';
-import { AuthService } from 'src/app/user/auth.service';
+import { AuthService } from '../../user/auth.service';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class EventDetailsComponent {
     sortBy = 'votes';
 
 
-    constructor(private eventService: EventService, private route: ActivatedRoute, private auth: AuthService) {
+    constructor(private eventService: EventService, private route: ActivatedRoute, public auth: AuthService) {
 
     }
 
